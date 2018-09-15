@@ -4,10 +4,8 @@ using UnityEngine;
 
 namespace Sushiya
 {
-    public class Sushiya : MonoBehaviour
-    {
-        public static Sushiya Instance;
-        
+    public class Sushiya : SingletonMonoBehaviour<Sushiya>
+    {   
         public DishHolder DishHolder = new DishHolder();
     }
 }

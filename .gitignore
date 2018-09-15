@@ -35,3 +35,12 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+Assets/Plugins.meta
+Assets/Plugins/Editor.meta
+.idea/.idea.sushi-atsume/.idea/contentModel.xml
+.idea/.idea.sushi-atsume/.idea/indexLayout.xml
+.idea/.idea.sushi-atsume/.idea/modules.xml
+.idea/.idea.sushi-atsume/.idea/workspace.xml
+.idea/.idea.sushi-atsume/riderModule.iml
+Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll
+Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll.meta

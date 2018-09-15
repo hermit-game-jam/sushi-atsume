@@ -6,6 +6,8 @@ namespace Sushiya
 {
     public class Sushiya : MonoBehaviour
     {
-    
+        public static Sushiya Instance;
+        
+        public DishHolder DishHolder = new DishHolder();
     }
 }

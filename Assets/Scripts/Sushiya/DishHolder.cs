@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using UniRx;
 
 namespace Sushiya
 {
@@ -6,11 +8,23 @@ namespace Sushiya
     {
         private readonly Queue<int> dishQueue = new Queue<int>();
 
+        private ISubject<Unit> addDishSubject = new Subject<Unit>();
+        
+        /// <summary>
+        /// Addが呼ばれた時に呼ばれる
+        /// </summary>
+        public IObservable<Unit> AddDishObservable => addDishSubject;
+        
+        /// <summary>
+        /// 現在の皿の枚数
+        /// </summary>
+        public int CurrentDishCount => dishQueue.Count;
+
         /// <param name="sushiCode"></param>
         public void Add(int sushiCode)
         {
             dishQueue.Enqueue(sushiCode);
-            // TODO: 追加された時に何かのイベント発火する
+            addDishSubject.OnNext(Unit.Default);
         }
         
         /// <summary>

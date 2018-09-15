@@ -6,5 +6,10 @@ namespace Masters
     public struct Price
     {
         public int Value;
+
+        public Price(int value)
+        {
+            Value = value;
+        }
     }
 }

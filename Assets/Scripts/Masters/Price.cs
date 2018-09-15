@@ -3,7 +3,7 @@
 namespace Masters
 {
     [Serializable]
-    public class Price
+    public struct Price
     {
         public int Value;
     }

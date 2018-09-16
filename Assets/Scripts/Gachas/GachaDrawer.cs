@@ -1,12 +1,15 @@
-﻿using Sushiya;
+﻿using System;
+using Sushiya;
 using UniRx;
 
 namespace Gachas
 {
-    public class GachaDrawer
+    public class GachaDrawer : IDisposable
     {
         public static int DrawCost = 5;
 
+        private readonly CompositeDisposable disposables = new CompositeDisposable();
+        
         public GachaDrawer(DishHolder dishHolder)
         {
             dishHolder.AddDishObservable
@@ -15,7 +18,13 @@ namespace Gachas
                 {
                     dishHolder.Remove(DrawCost);
                     // ガチャ引く
-                });
+                })
+                .AddTo(disposables);
+        }
+
+        public void Dispose()
+        {
+            disposables.Dispose();
         }
     }
 }

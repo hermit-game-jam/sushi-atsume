@@ -10,7 +10,7 @@ namespace Gachas
 
         private readonly CompositeDisposable disposables = new CompositeDisposable();
         
-        public GachaDrawer(DishHolder dishHolder)
+        public GachaDrawer(DishHolder dishHolder, SushiMenu sushiMenu)
         {
             dishHolder.AddDishObservable
                 .Where(_ => dishHolder.CurrentDishCount >= DrawCost)

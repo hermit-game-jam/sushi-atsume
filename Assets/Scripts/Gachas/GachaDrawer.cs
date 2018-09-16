@@ -13,7 +13,7 @@ namespace Gachas
         public GachaDrawer(DishHolder dishHolder)
         {
             dishHolder.AddDishObservable
-                .Where(_ => dishHolder.CurrentDishCount == DrawCost)
+                .Where(_ => dishHolder.CurrentDishCount >= DrawCost)
                 .Subscribe(_ =>
                 {
                     dishHolder.Remove(DrawCost);

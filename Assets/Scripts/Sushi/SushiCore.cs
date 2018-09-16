@@ -9,6 +9,7 @@ namespace Sushi
     {
         ISushiState state;
         public ISushiState State => state;
+        public const int SushiMaxLife = 5;
 
         SushiMaster Master { get; set; }
         SushiHolder Holder { get; set; }
@@ -77,7 +78,7 @@ namespace Sushi
             readonly SushiCore core;
             public bool AutoMovable => false;
             public bool Rotatable => false;
-            int SushiLife = 5;
+            int SushiLife = SushiMaxLife;
 
             public TableSushiState(SushiCore core)
             {

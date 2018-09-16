@@ -15,9 +15,12 @@ MonoBehaviour:
   - Code: 0
     Price:
       Value: 1
+    prefab: {fileID: 114661949045362712, guid: 026b792281c5e9c44914a2f805edc89c, type: 2}
   - Code: 1
     Price:
       Value: 2
+    prefab: {fileID: 114661949045362712, guid: 026b792281c5e9c44914a2f805edc89c, type: 2}
   - Code: 2
     Price:
       Value: 3
+    prefab: {fileID: 114661949045362712, guid: 026b792281c5e9c44914a2f805edc89c, type: 2}

@@ -8,6 +8,7 @@ namespace Sushi
     public class SushiFactory : MonoBehaviour
     {
         [SerializeField] float timeSpanSeconds;
+        [SerializeField] SushiHolder sushiHolder;
 
         void Start()
         {
@@ -19,8 +20,8 @@ namespace Sushi
 
         void Create(SushiMaster master)
         {
-            var sushiCore = Instantiate(master.prefab, transform.position, Quaternion.identity);
-            sushiCore.Master = master;
+            var sushiCore = Instantiate(master.prefab, transform.position, Quaternion.identity, transform);
+            sushiCore.Initialize(master, sushiHolder);
         }
 
         SushiMaster RandomSushiMaster()

@@ -28,5 +28,10 @@ namespace Sushiya
                 .Select(x => Master.Instance.SushiMaster.Values[x.Key].Price.Value * x.Value)
                 .Sum();
         }
+
+        public bool Contains(int sushiCode)
+        {
+            return sushiCountPairs[sushiCode] != 0;
+        }
     }
 }

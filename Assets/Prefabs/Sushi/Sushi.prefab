@@ -168,6 +168,8 @@ MonoBehaviour:
   audioSource: {fileID: 82850871439583224}
   takeSushiClips:
   - {fileID: 8300000, guid: 41fae32da257f43d1862bc6c8558d9e1, type: 3}
+  takeSushiFailedClips:
+  - {fileID: 8300000, guid: 2c3b35b441b614be287aa9421b3eb30c, type: 3}
   taberuSushiClips:
   - {fileID: 8300000, guid: a06b1fc472895443da1a70e8719e3702, type: 3}
   - {fileID: 8300000, guid: 76d6badf57dad4725b647863ee405344, type: 3}

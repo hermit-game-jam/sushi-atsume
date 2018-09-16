@@ -12,6 +12,7 @@ namespace Sushi
         [SerializeField] AudioSource audioSource;
 
         [SerializeField] List<AudioClip> takeSushiClips;
+        [SerializeField] List<AudioClip> takeSushiFailedClips;
         [SerializeField] List<AudioClip> taberuSushiClips;
         [SerializeField] List<AudioClip> dropDishClips;
 
@@ -19,25 +20,26 @@ namespace Sushi
         {
             core.OnLaneSushiClick.Subscribe(putSucceed =>
             {
-                // TODO 失敗の時に音を変える
-                PlaySound(takeSushiClips);
+                var clips = putSucceed ? takeSushiClips : takeSushiFailedClips;
+                var pitchRange = putSucceed ? 0.08f : 0;
+                PlaySound(clips, pitchRange);
             }).AddTo(this);
             
             core.OnTableSushiClick.Subscribe(sushiLife =>
             {
-                PlaySound(taberuSushiClips);
+                PlaySound(taberuSushiClips,0.2f);
             }).AddTo(this);
             
             core.OnEmptySushiClick.Subscribe(_ =>
             {
-                PlaySound(dropDishClips, true);
+                PlaySound(dropDishClips, 0.05f, true);
             }).AddTo(this);
         }
 
-        void PlaySound(List<AudioClip> clips, bool playOutSide = false)
+        void PlaySound(List<AudioClip> clips, float pitchRange = 0.05f, bool playOutSide = false)
         {
             var selectedClip = clips.Random();
-            var pitch = Random.Range(0.95f, 1.05f);
+            var pitch = Random.Range(1 - pitchRange, 1 + pitchRange);
 
             var a = playOutSide ? CreateOutsideAudioSource(selectedClip) : audioSource;
             

@@ -185,6 +185,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a09f4194069c54665875ff42ea0f2e62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lotteryProgressTime: 1.4
+  resultTime: 1.4
   audioSource: {fileID: 299134700}
   startClip: {fileID: 8300000, guid: bb9a78c2ff9a240769e8939206ab4c6a, type: 3}
   winClip: {fileID: 8300000, guid: 454d82a37eed74401a54ccd50cb17c61, type: 3}

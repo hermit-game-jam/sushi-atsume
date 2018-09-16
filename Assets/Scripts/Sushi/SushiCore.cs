@@ -38,6 +38,11 @@ namespace Sushi
             this.state = state;
         }
 
+        public void ChangeStateToMenu()
+        {
+            ChangeState(new MenuSushiState());
+        }
+
         void IClickable.OnClick()
         {
             state.OnClick();
@@ -47,6 +52,7 @@ namespace Sushi
         {
             readonly SushiCore core;
             public bool AutoMovable => true;
+            public bool Rotatable => true;
 
             public LaneSushiState(SushiCore core)
             {
@@ -55,13 +61,13 @@ namespace Sushi
 
             void ISushiState.OnClick()
             {
-                var putSucceed = core.Holder.TryPut(core);
-                
+                var putSucceed = core.Holder.TryPut(core.transform);
+
                 if (putSucceed)
                 {
                     core.ChangeState(new TableSushiState(core));
                 }
-                
+
                 core.onLaneSushiClick.OnNext(putSucceed);
             }
         }
@@ -70,6 +76,7 @@ namespace Sushi
         {
             readonly SushiCore core;
             public bool AutoMovable => false;
+            public bool Rotatable => false;
             int SushiLife = 5;
 
             public TableSushiState(SushiCore core)
@@ -86,11 +93,12 @@ namespace Sushi
                 }
             }
         }
-        
+
         class EmptySushiState : ISushiState
         {
             readonly SushiCore core;
             public bool AutoMovable => false;
+            public bool Rotatable => false;
 
             public EmptySushiState(SushiCore core)
             {
@@ -102,6 +110,19 @@ namespace Sushi
                 Sushiya.Sushiya.Instance.Denpyo.Add(core.Master.Code);
                 Sushiya.Sushiya.Instance.DishHolder.Add(core.Master.Code);
                 Destroy(core.gameObject);
+            }
+        }
+
+        class MenuSushiState : ISushiState
+        {
+            public bool AutoMovable => false;
+            public bool Rotatable => true;
+
+            public MenuSushiState()
+            {
+            }
+            void ISushiState.OnClick()
+            {
             }
         }
     }

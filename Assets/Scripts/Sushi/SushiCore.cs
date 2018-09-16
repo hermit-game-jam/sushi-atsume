@@ -13,8 +13,8 @@ namespace Sushi
         SushiMaster Master { get; set; }
         SushiHolder Holder { get; set; }
 
-        private ISubject<Unit> onLaneSushiClick = new Subject<Unit>();
-        public IObservable<Unit> OnLaneSushiClick => onLaneSushiClick;
+        private ISubject<bool> onLaneSushiClick = new Subject<bool>();
+        public IObservable<bool> OnLaneSushiClick => onLaneSushiClick;
         
         private ISubject<int> onTableSushiClick = new Subject<int>();
         public IObservable<int> OnTableSushiClick => onTableSushiClick;
@@ -55,11 +55,14 @@ namespace Sushi
 
             void ISushiState.OnClick()
             {
-                if (core.Holder.TryPut(core))
+                var putSucceed = core.Holder.TryPut(core);
+                
+                if (putSucceed)
                 {
                     core.ChangeState(new TableSushiState(core));
                 }
-                core.onLaneSushiClick.OnNext(Unit.Default);
+                
+                core.onLaneSushiClick.OnNext(putSucceed);
             }
         }
 

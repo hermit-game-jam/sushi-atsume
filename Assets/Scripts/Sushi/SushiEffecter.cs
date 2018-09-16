@@ -17,8 +17,9 @@ namespace Sushi
 
         void Start()
         {
-            core.OnLaneSushiClick.Subscribe(_ =>
+            core.OnLaneSushiClick.Subscribe(putSucceed =>
             {
+                // TODO 失敗の時に音を変える
                 PlaySound(takeSushiClips);
             }).AddTo(this);
             

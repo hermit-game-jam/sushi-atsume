@@ -12,7 +12,40 @@ MonoBehaviour:
   m_Name: SushiMasterRepository
   m_EditorClassIdentifier: 
   Values:
-  - Code: 0
+  - Name: Maguro
+    FlavorText: kkkkkkkkkk
+    Rarity: 4
+    Code: 0
+    Price:
+      Value: 100
+    prefab: {fileID: 114513623132136884, guid: 915e9fbf4a1ee4f04ae7e1c5137579ca, type: 2}
+    netaPrefab: {fileID: 1975241849439570, guid: 9761b4e9ed0f64f1ba137555e51f4c53,
+      type: 2}
+    dishPrefab: {fileID: 1057317834854458, guid: a63aa4f6b42854ca2bc946c005887b98,
+      type: 2}
+    ricePrefab: {fileID: 1997753026518132, guid: 026b792281c5e9c44914a2f805edc89c,
+      type: 2}
+    IsUnlocked: 1
+    GachaWeight: 0
+  - Name: Tamago
+    FlavorText: aaaaaaaaaaaa
+    Rarity: 4
+    Code: 1
+    Price:
+      Value: 100
+    prefab: {fileID: 114513623132136884, guid: 915e9fbf4a1ee4f04ae7e1c5137579ca, type: 2}
+    netaPrefab: {fileID: 1975241849439570, guid: 36b56cd32b79a492aae394624128f9fb,
+      type: 2}
+    dishPrefab: {fileID: 1057317834854458, guid: a63aa4f6b42854ca2bc946c005887b98,
+      type: 2}
+    ricePrefab: {fileID: 1997753026518132, guid: 026b792281c5e9c44914a2f805edc89c,
+      type: 2}
+    IsUnlocked: 0
+    GachaWeight: 200
+  - Name: Salmon
+    FlavorText: nnnnnnnnnnn
+    Rarity: 4
+    Code: 2
     Price:
       Value: 100
     prefab: {fileID: 114513623132136884, guid: 915e9fbf4a1ee4f04ae7e1c5137579ca, type: 2}
@@ -22,29 +55,35 @@ MonoBehaviour:
       type: 2}
     ricePrefab: {fileID: 1997753026518132, guid: 026b792281c5e9c44914a2f805edc89c,
       type: 2}
-    IsUnlocked: 1
-    GachaWeight: 0
-  - Code: 1
-    Price:
-      Value: 150
-    prefab: {fileID: 114513623132136884, guid: 915e9fbf4a1ee4f04ae7e1c5137579ca, type: 2}
-    netaPrefab: {fileID: 1975241849439570, guid: c6297ecd851ed478fb30fb71c803a95c,
-      type: 2}
-    dishPrefab: {fileID: 1057317834854458, guid: a63aa4f6b42854ca2bc946c005887b98,
-      type: 2}
-    ricePrefab: {fileID: 1997753026518132, guid: 026b792281c5e9c44914a2f805edc89c,
-      type: 2}
     IsUnlocked: 0
-    GachaWeight: 2
-  - Code: 2
+    GachaWeight: 200
+  - Name: Ika
+    FlavorText: aaaaaaaaaa
+    Rarity: 3
+    Code: 3
     Price:
       Value: 200
     prefab: {fileID: 114513623132136884, guid: 915e9fbf4a1ee4f04ae7e1c5137579ca, type: 2}
-    netaPrefab: {fileID: 1975241849439570, guid: c6297ecd851ed478fb30fb71c803a95c,
+    netaPrefab: {fileID: 1975241849439570, guid: 514c79eacf7c74c24bdc45ee2ab3e8f2,
       type: 2}
-    dishPrefab: {fileID: 1057317834854458, guid: a63aa4f6b42854ca2bc946c005887b98,
+    dishPrefab: {fileID: 1057317834854458, guid: 009112c0e07c5487097383cd5fdb3cb6,
       type: 2}
     ricePrefab: {fileID: 1997753026518132, guid: 026b792281c5e9c44914a2f805edc89c,
       type: 2}
     IsUnlocked: 0
-    GachaWeight: 3
+    GachaWeight: 150
+  - Name: Kohada
+    FlavorText: iiiiiiiiiiiiiii
+    Rarity: 2
+    Code: 4
+    Price:
+      Value: 200
+    prefab: {fileID: 114513623132136884, guid: 915e9fbf4a1ee4f04ae7e1c5137579ca, type: 2}
+    netaPrefab: {fileID: 1975241849439570, guid: cf09003000192453aa05802ba6c9149e,
+      type: 2}
+    dishPrefab: {fileID: 1057317834854458, guid: 86cd9ecdce4bf4de6b6c38c735b0789b,
+      type: 2}
+    ricePrefab: {fileID: 1997753026518132, guid: 026b792281c5e9c44914a2f805edc89c,
+      type: 2}
+    IsUnlocked: 0
+    GachaWeight: 100

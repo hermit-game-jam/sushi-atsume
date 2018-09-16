@@ -8,11 +8,18 @@ namespace Sushi
         ISushiState state;
         public ISushiState State => state;
 
-        public SushiMaster Master { get; set; }
+        SushiMaster Master { get; set; }
+        SushiHolder Holder { get; set; }
 
         void Awake()
         {
             ChangeState(new LaneSushiState(this));
+        }
+
+        public void Initialize(SushiMaster master, SushiHolder holder)
+        {
+            Master = master;
+            Holder = holder;
         }
 
         public void ChangeState(ISushiState state)
@@ -37,7 +44,10 @@ namespace Sushi
 
             void ISushiState.OnClick()
             {
-                core.ChangeState(new TableSushiState(core));
+                if (core.Holder.TryPut(core))
+                {
+                    core.ChangeState(new TableSushiState(core));
+                }
             }
         }
 

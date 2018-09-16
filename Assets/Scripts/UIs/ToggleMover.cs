@@ -8,10 +8,16 @@ namespace UIs
     {
         readonly BoolReactiveProperty zooming = new BoolReactiveProperty();
         [SerializeField] Animator _animator;
+        [SerializeField] AudioSource _audio;
 
         void Start()
         {
-            zooming.Subscribe(x => _animator.SetBool("zooming", x))
+            zooming.SkipLatestValueOnSubscribe()
+                .Subscribe(x =>
+                {
+                    _animator.SetBool("zooming", x);
+                    _audio.Play();
+                })
                 .AddTo(this);
         }
 

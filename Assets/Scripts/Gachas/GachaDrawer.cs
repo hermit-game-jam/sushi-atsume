@@ -15,11 +15,14 @@ namespace Gachas
         {
             dishHolder.AddDishObservable
                 .Where(_ => dishHolder.CurrentDishCount >= DrawCost)
-                .Subscribe(_ =>
+                .Select(_ =>
                 {
                     dishHolder.Remove(DrawCost);
-
-                    var gachaResult = Master.Instance.SushiMaster.Lottery();
+                    return Master.Instance.SushiMaster.Lottery();
+                })
+                .SelectMany(gachaResult =>　UIGacha.Instance.DirectionAsObservable(gachaResult, sushiMenu.IsNewSushi(gachaResult)).Select(_ => gachaResult))
+                .Subscribe(gachaResult =>
+                {
                     sushiMenu.Unlock(gachaResult);
                 })
                 .AddTo(disposables);

@@ -117,3 +117,18 @@ MonoBehaviour:
       type: 2}
     IsUnlocked: 0
     GachaWeight: 25
+  - Name: King Salmon
+    FlavorText: nnnnnn
+    Rarity: 1
+    Code: 7
+    Price:
+      Value: 1600
+    prefab: {fileID: 114513623132136884, guid: 915e9fbf4a1ee4f04ae7e1c5137579ca, type: 2}
+    netaPrefab: {fileID: 1975241849439570, guid: c6297ecd851ed478fb30fb71c803a95c,
+      type: 2}
+    dishPrefab: {fileID: 1057317834854458, guid: ffb864660f0a549a8a7c060e9997af74,
+      type: 2}
+    ricePrefab: {fileID: 1997753026518132, guid: 026b792281c5e9c44914a2f805edc89c,
+      type: 2}
+    IsUnlocked: 0
+    GachaWeight: 60

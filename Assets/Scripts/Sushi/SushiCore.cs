@@ -1,5 +1,7 @@
-﻿using Masters;
+﻿using System;
+using Masters;
 using UnityEngine;
+using UniRx;
 
 namespace Sushi
 {
@@ -10,6 +12,15 @@ namespace Sushi
 
         SushiMaster Master { get; set; }
         SushiHolder Holder { get; set; }
+
+        private ISubject<Unit> onLaneSushiClick = new Subject<Unit>();
+        public IObservable<Unit> OnLaneSushiClick => onLaneSushiClick;
+        
+        private ISubject<int> onTableSushiClick = new Subject<int>();
+        public IObservable<int> OnTableSushiClick => onTableSushiClick;
+        
+        private ISubject<Unit> onEmptySushiClick = new Subject<Unit>();
+        public IObservable<Unit> OnEmptySushiClick => onEmptySushiClick;
 
         void Awake()
         {
@@ -48,6 +59,7 @@ namespace Sushi
                 {
                     core.ChangeState(new TableSushiState(core));
                 }
+                core.onLaneSushiClick.OnNext(Unit.Default);
             }
         }
 
@@ -64,6 +76,7 @@ namespace Sushi
             void ISushiState.OnClick()
             {
                 SushiLife--;
+                core.onTableSushiClick.OnNext(SushiLife);
                 if (SushiLife <= 0)
                 {
                     core.ChangeState(new EmptySushiState(core));
@@ -82,6 +95,7 @@ namespace Sushi
             }
             void ISushiState.OnClick()
             {
+                core.onEmptySushiClick.OnNext(Unit.Default);
                 Sushiya.Sushiya.Instance.DishHolder.Add(core.Master.Code);
                 Destroy(core.gameObject);
             }

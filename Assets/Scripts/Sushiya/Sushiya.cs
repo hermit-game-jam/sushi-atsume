@@ -10,7 +10,7 @@ namespace Sushiya
     public class Sushiya : SingletonMonoBehaviour<Sushiya>
     {   
         public DishHolder DishHolder = new DishHolder();
-        private SushiMenu SushiMenu;
+        public SushiMenu SushiMenu;
         public Denpyo Denpyo;
         private GachaDrawer GachaDrawer;
 

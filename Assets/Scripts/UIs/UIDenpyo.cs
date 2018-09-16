@@ -13,9 +13,9 @@ namespace UIs
         void Start()
         {
             UpdateView(0, false);
-            
+
             Sushiya.Sushiya.Instance.DenpyoAsObservable
-                .SelectMany(x => x.AddPriceEvent, (denpyo, unit) => denpyo.Sum())
+                .SelectMany(x => x.AddPriceEvent, (denpyo, _) => denpyo.Sum())
                 .Subscribe(sumPrice =>
                 {
                     UpdateView(sumPrice, true);

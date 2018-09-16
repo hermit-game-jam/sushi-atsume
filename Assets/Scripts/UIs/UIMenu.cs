@@ -1,5 +1,8 @@
-﻿using Masters;
+﻿using System;
+using System.Collections.Generic;
+using Masters;
 using Sushi;
+using UniRx;
 using UnityEngine;
 
 namespace UIs
@@ -9,6 +12,7 @@ namespace UIs
         [SerializeField] SushiHolder holder;
         [SerializeField] Quaternion sushiAngle;
         [SerializeField] MenuTexts textPrefab;
+        readonly Dictionary<int, Tuple<SushiCore, MenuTexts>> dict = new Dictionary<int, Tuple<SushiCore, MenuTexts>>();
 
         void Start()
         {
@@ -20,22 +24,51 @@ namespace UIs
                     sushi.transform.rotation = sushiAngle;
                     var text = CreateText(master);
                     text.transform.SetParent(sushi.transform.parent, false);
+                    dict.Add(master.Code, Tuple.Create(sushi, text));
+                }
+                else
+                {
+                    Destroy(sushi.gameObject);
                 }
             }
+
+            Sushiya.Sushiya.Instance.SushiMenu.Unlocked
+                .Subscribe(ShowModel)
+                .AddTo(this);
+
+            Sushiya.Sushiya.Instance.Denpyo.AddPriceEvent
+                .Subscribe(ShowText)
+                .AddTo(this);
         }
 
-        GameObject CreateSushi(SushiMaster master)
+        SushiCore CreateSushi(SushiMaster master)
         {
             var sushi = master.SushiCreate(Vector3.zero, Quaternion.identity, transform);
             sushi.ChangeStateToMenu();
-            return sushi.gameObject;
+            if (!master.IsUnlocked)
+            {
+                sushi.gameObject.SetActive(false);
+            }
+            return sushi;
         }
 
-        GameObject CreateText(SushiMaster master)
+        MenuTexts CreateText(SushiMaster master)
         {
             var text = Instantiate(textPrefab);
             text.Configure(master);
-            return text.gameObject;
+            return text;
+        }
+
+        void ShowModel(int code)
+        {
+            var t = dict[code];
+            t.Item1.gameObject.SetActive(true);
+        }
+
+        void ShowText(int code)
+        {
+            var t = dict[code];
+            t.Item2.ShowText(true);
         }
     }
 }

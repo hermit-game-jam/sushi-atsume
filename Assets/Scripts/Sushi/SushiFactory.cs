@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Masters;
 using UniRx;
 using UnityEngine;
@@ -26,8 +27,8 @@ namespace Sushi
 
         SushiMaster RandomSushiMaster()
         {
-            // TODO: Slice unlocked Sushi
-            return Master.Instance.SushiMaster.Values.Random();
+            var code = Sushiya.Sushiya.Instance.SushiMenu.UnlockedSushiCodes.Random();
+            return Master.Instance.SushiMaster.Values.Single(x => x.Code == code);
         }
     }
 }

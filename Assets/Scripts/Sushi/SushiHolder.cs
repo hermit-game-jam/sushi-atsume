@@ -13,22 +13,24 @@ namespace Sushi
             Transform transform;
             public Transform Transform => transform;
 
-            public SushiCore SushiCore { get; set; }
+            public Transform Child { get; set; }
         }
 
         [SerializeField] Parent[] parents;
 
-        public bool TryPut(SushiCore sushiCore)
+        public bool TryPut(Transform child)
         {
-            var parent = parents.FirstOrDefault(x => x.SushiCore == null);
+            var parent = parents.FirstOrDefault(x => x.Child == null);
             if (parent == null)
             {
                 return false;
             }
 
-            parent.SushiCore = sushiCore;
-            sushiCore.transform.SetParent(parent.Transform, false);
-            sushiCore.transform.localPosition = Vector3.zero;
+            parent.Child = child;
+            child.SetParent(parent.Transform, false);
+            child.localPosition = Vector3.zero;
+            child.localRotation = Quaternion.identity;
+            child.localScale = Vector3.one;
             return true;
         }
     }

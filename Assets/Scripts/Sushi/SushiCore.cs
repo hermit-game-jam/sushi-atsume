@@ -61,13 +61,13 @@ namespace Sushi
 
             void ISushiState.OnClick()
             {
-                var putSucceed = core.Holder.TryPut(core);
-                
+                var putSucceed = core.Holder.TryPut(core.transform);
+
                 if (putSucceed)
                 {
                     core.ChangeState(new TableSushiState(core));
                 }
-                
+
                 core.onLaneSushiClick.OnNext(putSucceed);
             }
         }

@@ -28,6 +28,7 @@ namespace Sushi
 
             parent.SushiCore = sushiCore;
             sushiCore.transform.SetParent(parent.Transform, false);
+            sushiCore.transform.localPosition = Vector3.zero;
             return true;
         }
     }

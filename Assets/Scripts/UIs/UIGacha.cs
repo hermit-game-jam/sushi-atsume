@@ -14,6 +14,11 @@ public class UIGacha : SingletonMonoBehaviour<UIGacha>
     Dictionary<int, SushiCore> sushis = new Dictionary<int, SushiCore>();
 
     [SerializeField]
+    float lotteryProgressTime;
+    [SerializeField]
+    float resultTime;
+
+    [SerializeField]
     AudioSource audioSource;
 
     [SerializeField]
@@ -54,7 +59,9 @@ public class UIGacha : SingletonMonoBehaviour<UIGacha>
     {
         audioSource.PlayOneShot(startClip);
 
-        for (int i = 0; i < 2; i++)
+        var startTime = Time.time;
+
+        while (true)
         {
             foreach (var it in sushis.Values)
             {
@@ -63,6 +70,8 @@ public class UIGacha : SingletonMonoBehaviour<UIGacha>
                 yield return new WaitForSeconds(0.1f);
 
                 it.gameObject.SetActive(false);
+
+                if (Time.time - startTime > lotteryProgressTime) { yield break; }
             }
         }
     }
@@ -72,8 +81,9 @@ public class UIGacha : SingletonMonoBehaviour<UIGacha>
         audioSource.PlayOneShot(isNewSushi ? winClip : loseClip);
 
         var resultSushi = sushis[sushiCode];
+        var startTime = Time.time;
 
-        for (var i = 0; i < 10; i++)
+        while (true)
         {
             resultSushi.gameObject.SetActive(true);
             
@@ -82,6 +92,8 @@ public class UIGacha : SingletonMonoBehaviour<UIGacha>
             resultSushi.gameObject.SetActive(false);
             
             yield return new WaitForSeconds(0.1f);
+            
+            if (Time.time - startTime > resultTime) { yield break; }
         }
     }
 }

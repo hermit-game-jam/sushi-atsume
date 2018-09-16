@@ -10,16 +10,16 @@ namespace Sushiya
     {
         private readonly Dictionary<int, int> sushiCountPairs = Master.Instance.SushiMaster.Values.ToDictionary(x => x.Code, _ => 0);
 
-        private ISubject<Unit> addPriceEvent = new Subject<Unit>();
+        private readonly ISubject<int> addPriceEvent = new Subject<int>();
         /// <summary>
         /// Addが呼ばれた時に呼ばれる
         /// </summary>
-        public IObservable<Unit> AddPriceEvent => addPriceEvent;
-        
+        public IObservable<int> AddPriceEvent => addPriceEvent;
+
         public void Add(int sushiCode)
         {
             sushiCountPairs[sushiCode]++;
-            addPriceEvent.OnNext(Unit.Default);
+            addPriceEvent.OnNext(sushiCode);
         }
 
         public int Sum()

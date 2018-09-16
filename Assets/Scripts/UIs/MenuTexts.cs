@@ -13,6 +13,12 @@ namespace UIs
         {
             title.text = master.Name;
             text.text = master.FlavorText;
+            ShowText(false);
+        }
+
+        public void ShowText(bool enabled)
+        {
+            text.enabled = enabled;
         }
     }
 }

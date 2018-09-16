@@ -7,6 +7,9 @@ namespace Masters
     [Serializable]
     public class SushiMaster
     {
+        public string Name;
+        public string FlavorText;
+        public SushiRarity Rarity;
         public int Code;
         public Price Price;
         public SushiCore prefab;
@@ -16,6 +19,14 @@ namespace Masters
         public bool IsUnlocked;
         public int GachaWeight;
 
+        public enum SushiRarity
+        {
+            UltraRare,
+            SuperRare,
+            Rare,
+            Uncommon,
+            Common,
+        };
 
         public SushiCore SushiCreate(Vector3 position, Quaternion rotation, Transform parent)
         {

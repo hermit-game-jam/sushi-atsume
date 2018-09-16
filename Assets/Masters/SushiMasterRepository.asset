@@ -17,13 +17,16 @@ MonoBehaviour:
       Value: 1
     prefab: {fileID: 114661949045362712, guid: 026b792281c5e9c44914a2f805edc89c, type: 2}
     IsUnlocked: 1
+    GachaWeight: 1
   - Code: 1
     Price:
       Value: 2
     prefab: {fileID: 114661949045362712, guid: 026b792281c5e9c44914a2f805edc89c, type: 2}
     IsUnlocked: 0
+    GachaWeight: 2
   - Code: 2
     Price:
       Value: 3
     prefab: {fileID: 114661949045362712, guid: 026b792281c5e9c44914a2f805edc89c, type: 2}
     IsUnlocked: 0
+    GachaWeight: 3

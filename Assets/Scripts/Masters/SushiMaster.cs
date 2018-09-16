@@ -9,5 +9,6 @@ namespace Masters
         public Price Price;
         public SushiCore prefab;
         public bool IsUnlocked;
+        public int GachaWeight;
     }
 }

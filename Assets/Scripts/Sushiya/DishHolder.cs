@@ -34,10 +34,14 @@ namespace Sushiya
         /// <returns>減った時の寿司コード</returns>
         public IEnumerable<int> Remove(int num)
         {
+            var result = new List<int>();
+            
             for (var i = 0; i < num; i++)
             {
-                yield return dishQueue.Dequeue();
+                result.Add(dishQueue.Dequeue());
             }
+
+            return result;
         }
     }
 }

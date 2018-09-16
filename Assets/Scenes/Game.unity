@@ -298,6 +298,48 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84b3ddf34321f4b1bb53dfe7bcea3584, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1001 &1580473660
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4055282966191856, guid: e85dd221254d142a8bcf5198d32d9b64, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055282966191856, guid: e85dd221254d142a8bcf5198d32d9b64, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055282966191856, guid: e85dd221254d142a8bcf5198d32d9b64, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055282966191856, guid: e85dd221254d142a8bcf5198d32d9b64, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055282966191856, guid: e85dd221254d142a8bcf5198d32d9b64, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055282966191856, guid: e85dd221254d142a8bcf5198d32d9b64, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055282966191856, guid: e85dd221254d142a8bcf5198d32d9b64, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055282966191856, guid: e85dd221254d142a8bcf5198d32d9b64, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e85dd221254d142a8bcf5198d32d9b64, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1627281841
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,7 +367,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33e6c94206da1448092635c707947176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 114661949045362712, guid: 026b792281c5e9c44914a2f805edc89c, type: 2}
   timeSpanSeconds: 0.5
 --- !u!4 &1627281843
 Transform:

@@ -38,6 +38,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4352159838507446}
   - component: {fileID: 114235200893070426}
+  - component: {fileID: 65216553260191772}
+  - component: {fileID: 95872592029413354}
+  - component: {fileID: 114452408634057924}
   m_Layer: 0
   m_Name: MenuView
   m_TagString: Untagged
@@ -301,6 +304,36 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65216553260191772
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1158995282388814}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7, y: 0.4, z: 0.10287064}
+  m_Center: {x: 0, y: 0, z: -0.02143532}
+--- !u!95 &95872592029413354
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1158995282388814}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a58a1bb866873416c97b64d333eeca5e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114235200893070426
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -313,6 +346,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   holder: {fileID: 114808240174825836}
+--- !u!114 &114452408634057924
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1158995282388814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb0cd65b5b0484ffcbba4c9b67e7c6f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 95872592029413354}
 --- !u!114 &114808240174825836
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -328,3 +373,5 @@ MonoBehaviour:
   - transform: {fileID: 4671585832056112}
   - transform: {fileID: 4659139259993026}
   - transform: {fileID: 4830588248971994}
+  - transform: {fileID: 4864920682566326}
+  - transform: {fileID: 4081085276720278}

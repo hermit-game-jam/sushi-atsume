@@ -6,7 +6,7 @@ namespace Gachas
 {
     public class GachaDrawer : IDisposable
     {
-        public static int DrawCost = 5;
+        private static readonly int DrawCost = 5;
 
         private readonly CompositeDisposable disposables = new CompositeDisposable();
         

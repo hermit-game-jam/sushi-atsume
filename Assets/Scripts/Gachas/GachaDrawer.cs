@@ -1,6 +1,7 @@
 ﻿using System;
 using Sushiya;
 using UniRx;
+using Masters;
 
 namespace Gachas
 {
@@ -17,7 +18,9 @@ namespace Gachas
                 .Subscribe(_ =>
                 {
                     dishHolder.Remove(DrawCost);
-                    // ガチャ引く
+
+                    var gachaResult = Master.Instance.SushiMaster.Lottery();
+                    sushiMenu.Unlock(gachaResult);
                 })
                 .AddTo(disposables);
         }

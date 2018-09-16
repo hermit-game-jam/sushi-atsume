@@ -32,6 +32,18 @@ namespace Sushi
                 var t = SushiCore.SushiMaxLife - sushiLife;
                 var pitchOffset = t * 0.059f + globalPitchOffset;
                 PlaySound(taberuSushiClips, 0.0285f, pitchOffset);
+
+                foreach (var mr in GetComponentsInChildren<MeshRenderer>())
+                {
+                    if (mr.transform.name.StartsWith("Dish")) continue;
+                    
+                    mr.transform.localScale *= 0.8f;
+
+                    if (sushiLife == 0)
+                    {
+                        mr.transform.localScale = Vector3.zero;
+                    }
+                }
             }).AddTo(this);
             
             core.OnEmptySushiClick.Subscribe(_ =>

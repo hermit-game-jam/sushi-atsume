@@ -10,7 +10,7 @@ namespace Sushiya
         public DishHolder DishHolder = new DishHolder();
         private GachaDrawer GachaDrawer;
 
-        void Awake()
+        void Start()
         {
             GachaDrawer = new GachaDrawer(DishHolder); 
         }

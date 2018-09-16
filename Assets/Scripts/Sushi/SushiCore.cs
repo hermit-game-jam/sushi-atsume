@@ -43,6 +43,11 @@ namespace Sushi
             ChangeState(new MenuSushiState());
         }
 
+        public void ChangeStateToGacha()
+        {
+            ChangeState(new GachaState());
+        }
+
         void IClickable.OnClick()
         {
             state.OnClick();
@@ -121,6 +126,16 @@ namespace Sushi
             public MenuSushiState()
             {
             }
+            void ISushiState.OnClick()
+            {
+            }
+        }
+
+        class GachaState : ISushiState
+        {
+            public bool AutoMovable => false;
+            public bool Rotatable => false;
+
             void ISushiState.OnClick()
             {
             }

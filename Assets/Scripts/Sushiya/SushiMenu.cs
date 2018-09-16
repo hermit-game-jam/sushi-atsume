@@ -26,5 +26,10 @@ namespace Sushiya
 
             unlockedSushiCodes.Add(sushiCode);
         }
+
+        public bool IsNewSushi(int sushiCode)
+        {
+            return !unlockedSushiCodes.Contains(sushiCode);
+        }
     }
 }

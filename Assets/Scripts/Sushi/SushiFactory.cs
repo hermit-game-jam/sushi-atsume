@@ -21,7 +21,7 @@ namespace Sushi
 
         void Create(SushiMaster master)
         {
-            var sushiCore = Instantiate(master.prefab, transform.position, Quaternion.identity, transform);
+            var sushiCore = master.SushiCreate(transform.position, Quaternion.identity, transform);
             sushiCore.Initialize(master, sushiHolder);
         }
 

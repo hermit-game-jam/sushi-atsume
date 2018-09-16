@@ -132,3 +132,18 @@ MonoBehaviour:
       type: 2}
     IsUnlocked: 0
     GachaWeight: 60
+  - Name: Aburi Salmon
+    FlavorText: ooooo
+    Rarity: 2
+    Code: 8
+    Price:
+      Value: 1600
+    prefab: {fileID: 114513623132136884, guid: 915e9fbf4a1ee4f04ae7e1c5137579ca, type: 2}
+    netaPrefab: {fileID: 1975241849439570, guid: 211591e271a2949909d02f0ed53d77dd,
+      type: 2}
+    dishPrefab: {fileID: 1057317834854458, guid: 86cd9ecdce4bf4de6b6c38c735b0789b,
+      type: 2}
+    ricePrefab: {fileID: 1997753026518132, guid: 026b792281c5e9c44914a2f805edc89c,
+      type: 2}
+    IsUnlocked: 0
+    GachaWeight: 120

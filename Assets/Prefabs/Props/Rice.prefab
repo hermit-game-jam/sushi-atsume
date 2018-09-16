@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 33326993786431620}
   - component: {fileID: 114857480540550914}
   - component: {fileID: 65254195221991236}
+  - component: {fileID: 114661949045362712}
+  - component: {fileID: 114963823944751798}
   m_Layer: 0
   m_Name: Rice
   m_TagString: Untagged
@@ -37,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1360698543246666}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.623, y: 0.5, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -97,6 +99,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.06, y: 0.025, z: 0.025}
   m_Center: {x: 0.03, y: 0.0125, z: -0.0125}
+--- !u!114 &114661949045362712
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1360698543246666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afcfafc873e31491b81f5c009c69869d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114857480540550914
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -294,3 +307,16 @@ MonoBehaviour:
   m_selectedFaces: 
   m_SelectedEdges: []
   m_selectedTriangles: 
+--- !u!114 &114963823944751798
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1360698543246666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8ab89e7101e8428eacb3fe29e1f5ad6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  core: {fileID: 114661949045362712}
+  speed: 1

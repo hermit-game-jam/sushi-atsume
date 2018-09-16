@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Masters;
+using UnityEngine;
 
 namespace Sushi
 {
@@ -6,6 +7,8 @@ namespace Sushi
     {
         ISushiState state;
         public ISushiState State => state;
+
+        public SushiMaster Master { get; set; }
 
         void Awake()
         {

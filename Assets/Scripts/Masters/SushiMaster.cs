@@ -1,5 +1,5 @@
 ﻿using System;
-
+using Sushi;
 namespace Masters
 {
     [Serializable]
@@ -7,5 +7,6 @@ namespace Masters
     {
         public int Code;
         public Price Price;
+        public SushiCore prefab;
     }
 }

@@ -69,11 +69,15 @@ Material:
     - _Lerp: 0.803
     - _Metallic: 0
     - _Mode: 0
-    - _NormalIntensity: 0.2
+    - _NormalIntensity: 0.4
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _RimlightIntensity: 0.35
+    - _RimlightSmoothness: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
+    - _SpecularIntensity: 0.3
+    - _SpecularSmoothness: 0.03
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1

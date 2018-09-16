@@ -6,6 +6,12 @@
         [NoScaleOffset]
         _Normal("Normal", 2D) = "normal" {}
         _NormalIntensity("Intensity", Range(0.0, 1.0)) = 0.1
+        [Header(Rimlight)]
+        _RimlightIntensity("Intensity", Range(0.0, 1.0)) = 0.5
+        _RimlightSmoothness("Smoothness", Range(0.1, 1.0)) = 0.5
+        [Header(Specular)]
+        _SpecularIntensity("Intensity", Range(0.0, 1.0)) = 1.0
+        _SpecularSmoothness("Smoothness", Range(0.001, 1.0)) = 0.5
     }
 
     SubShader
@@ -32,6 +38,7 @@
             #pragma multi_compile_fwdbase
 
             #include "UnityCG.cginc"
+            #include "Lighting.cginc"
 
             struct appdata
             {
@@ -47,6 +54,7 @@
                 float2 uv : Texcoord0;
                 float3 world_normal : WorldNormal;
                 float3 world_light_dir : WorldLightDir;
+                float3 world_view_dir : WorldViewDir;
                 float3x3 tangent_to_world : TangentToWorld;
                 float3 ambient : Ambient;
             };
@@ -56,6 +64,12 @@
 
             sampler2D _Normal;
             float _NormalIntensity;
+
+            float _RimlightIntensity;
+            float _RimlightSmoothness;
+
+            float _SpecularIntensity;
+            float _SpecularSmoothness;
             
             v2f vert (appdata v)
             {
@@ -65,6 +79,7 @@
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
                 o.world_normal = UnityObjectToWorldNormal(v.normal);
                 o.world_light_dir = normalize(UnityWorldSpaceLightDir(world_vertex));
+                o.world_view_dir = normalize(UnityWorldSpaceViewDir(world_vertex));
 
                 TANGENT_SPACE_ROTATION;
                 o.tangent_to_world = mul(transpose(unity_WorldToObject), transpose(rotation));
@@ -77,6 +92,7 @@
             half4 frag (v2f i) : SV_Target
             {
                 i.world_light_dir = normalize(i.world_light_dir);
+                i.world_view_dir =  normalize(i.world_view_dir);
 
                 half4 dest = tex2D(_MainTex, i.uv);
 
@@ -85,7 +101,11 @@
                 float3 world_normal = normalize(lerp(i.world_normal, world_normal_base, _NormalIntensity));
 
                 float lightness = dot(i.world_light_dir, world_normal) * 0.5 + 0.5;
-                dest.rgb *= lightness + i.ambient;
+                float3 diffuse = _LightColor0.rgb * lightness;
+                float3 specular = pow(saturate(dot(normalize(i.world_light_dir + i.world_view_dir), world_normal)), rcp(_SpecularSmoothness)) * _SpecularIntensity;
+                float3 rimlight = pow(1 - dot(i.world_view_dir, world_normal), rcp(_RimlightSmoothness)) * _RimlightIntensity * _LightColor0.rgb;
+                dest.rgb = dest.rgb * (diffuse + i.ambient + rimlight) + specular;
+
 
                 return dest;
             }

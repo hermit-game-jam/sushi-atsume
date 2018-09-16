@@ -99,6 +99,7 @@ namespace Sushi
             void ISushiState.OnClick()
             {
                 core.onEmptySushiClick.OnNext(Unit.Default);
+                Sushiya.Sushiya.Instance.Denpyo.Add(core.Master.Code);
                 Sushiya.Sushiya.Instance.DishHolder.Add(core.Master.Code);
                 Destroy(core.gameObject);
             }

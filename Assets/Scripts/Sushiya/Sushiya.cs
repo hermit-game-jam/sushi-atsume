@@ -19,8 +19,8 @@ namespace Sushiya
 
         void Start()
         {
-            SushiMenu = new SushiMenu();
             Denpyo = new Denpyo();
+            SushiMenu = new SushiMenu(Denpyo);
             GachaDrawer = new GachaDrawer(DishHolder, SushiMenu);
             _denpyo.OnNext(Denpyo);
             _denpyo.OnCompleted();

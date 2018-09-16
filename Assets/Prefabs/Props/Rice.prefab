@@ -26,6 +26,8 @@ GameObject:
   - component: {fileID: 114513623132136884}
   - component: {fileID: 114949240238468706}
   - component: {fileID: 114990254801381674}
+  - component: {fileID: 114497512754420452}
+  - component: {fileID: 82850871439583224}
   m_Layer: 0
   m_Name: Rice
   m_TagString: Untagged
@@ -98,8 +100,131 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.06, y: 0.025, z: 0.024999999}
-  m_Center: {x: 0, y: 0.0125, z: 0}
+  m_Size: {x: 0.05999999, y: 0.025, z: 0.024999999}
+  m_Center: {x: -0.0000000018626451, y: 0.0125, z: -0.0005000001}
+--- !u!82 &82850871439583224
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1360698543246666}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &114497512754420452
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1360698543246666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 102d6ff475c3b4960813715ce999592a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  core: {fileID: 114513623132136884}
+  audioSource: {fileID: 82850871439583224}
+  takeSushiClips:
+  - {fileID: 8300000, guid: 41fae32da257f43d1862bc6c8558d9e1, type: 3}
+  taberuSushiClips:
+  - {fileID: 8300000, guid: a06b1fc472895443da1a70e8719e3702, type: 3}
+  - {fileID: 8300000, guid: 76d6badf57dad4725b647863ee405344, type: 3}
+  - {fileID: 8300000, guid: 3a323eaa401984d0e9d54663a63d7d67, type: 3}
+  - {fileID: 8300000, guid: 173330b01ee91459dae9f119879440d8, type: 3}
+  - {fileID: 8300000, guid: 6ec7cae442a08434495e96d5fa6e3134, type: 3}
+  - {fileID: 8300000, guid: 250e0646ef13f49cfaf56bd2a8e97eef, type: 3}
+  - {fileID: 8300000, guid: c3c245c57b5994db4bccf0d1a24f823b, type: 3}
+  - {fileID: 8300000, guid: eca5adaca18434e43aee5d29cd956736, type: 3}
+  - {fileID: 8300000, guid: 720f11d3ca2964e8f93b25cb671b88e3, type: 3}
+  - {fileID: 8300000, guid: 3f51ab85aa6e34aa8b84d74c250f461f, type: 3}
+  dropDishClips:
+  - {fileID: 8300000, guid: 5ee54490f2a094bffb0abfdb53bee097, type: 3}
 --- !u!114 &114513623132136884
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -1,6 +1,7 @@
 ﻿using System;
 using Sushiya;
 using UniRx;
+using Masters;
 
 namespace Gachas
 {
@@ -10,14 +11,16 @@ namespace Gachas
 
         private readonly CompositeDisposable disposables = new CompositeDisposable();
         
-        public GachaDrawer(DishHolder dishHolder)
+        public GachaDrawer(DishHolder dishHolder, SushiMenu sushiMenu)
         {
             dishHolder.AddDishObservable
                 .Where(_ => dishHolder.CurrentDishCount >= DrawCost)
                 .Subscribe(_ =>
                 {
                     dishHolder.Remove(DrawCost);
-                    // ガチャ引く
+
+                    var gachaResult = Master.Instance.SushiMaster.Lottery();
+                    sushiMenu.Unlock(gachaResult);
                 })
                 .AddTo(disposables);
         }

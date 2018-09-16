@@ -18,6 +18,8 @@ namespace Sushi
 
         void Start()
         {
+            var globalPitchOffset = Random.Range(-0.125f, 0.125f);
+            
             core.OnLaneSushiClick.Subscribe(putSucceed =>
             {
                 var clips = putSucceed ? takeSushiClips : takeSushiFailedClips;
@@ -27,16 +29,18 @@ namespace Sushi
             
             core.OnTableSushiClick.Subscribe(sushiLife =>
             {
-                PlaySound(taberuSushiClips,0.2f);
+                var t = SushiCore.SushiMaxLife - sushiLife;
+                var pitchOffset = t * 0.059f + globalPitchOffset;
+                PlaySound(taberuSushiClips, 0.0285f, pitchOffset);
             }).AddTo(this);
             
             core.OnEmptySushiClick.Subscribe(_ =>
             {
-                PlaySound(dropDishClips, 0.05f, true);
+                PlaySound(dropDishClips, 0.05f, 0, true);
             }).AddTo(this);
         }
 
-        void PlaySound(List<AudioClip> clips, float pitchRange = 0.05f, bool playOutSide = false)
+        void PlaySound(List<AudioClip> clips, float pitchRange = 0.05f, float pitchOffset = 0, bool playOutSide = false)
         {
             var selectedClip = clips.Random();
             var pitch = Random.Range(1 - pitchRange, 1 + pitchRange);
@@ -44,7 +48,7 @@ namespace Sushi
             var a = playOutSide ? CreateOutsideAudioSource(selectedClip) : audioSource;
             
             a.clip = selectedClip;
-            a.pitch = pitch;
+            a.pitch = pitch + pitchOffset;
             a.Play();
         }
         

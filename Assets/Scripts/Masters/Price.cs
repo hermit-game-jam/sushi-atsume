@@ -33,5 +33,10 @@ namespace Masters
         {
             return new Price(price.Value * arg);
         }
+
+        public override string ToString()
+        {
+            return Value.ToString();
+        }
     }
 }

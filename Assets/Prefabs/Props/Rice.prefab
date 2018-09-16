@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 65254195221991236}
   - component: {fileID: 114661949045362712}
   - component: {fileID: 114963823944751798}
+  - component: {fileID: 114473705360060454}
   m_Layer: 0
   m_Name: Rice
   m_TagString: Untagged
@@ -99,6 +100,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.06, y: 0.025, z: 0.025}
   m_Center: {x: 0.03, y: 0.0125, z: -0.0125}
+--- !u!114 &114473705360060454
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1360698543246666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de5ba0786aac0434b905f41490872f0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetimeSeconds: 10
 --- !u!114 &114661949045362712
 MonoBehaviour:
   m_ObjectHideFlags: 1

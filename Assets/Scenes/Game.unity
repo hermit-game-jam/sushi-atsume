@@ -408,7 +408,6 @@ GameObject:
   m_Component:
   - component: {fileID: 535650772}
   - component: {fileID: 535650774}
-  - component: {fileID: 535650773}
   m_Layer: 9
   m_Name: GachaCamera
   m_TagString: Untagged
@@ -430,14 +429,6 @@ Transform:
   m_Father: {fileID: 299134699}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
---- !u!81 &535650773
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 81265817281912648, guid: 74a2ac2c886c84394b11b95398f44c4f,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 535650771}
-  m_Enabled: 1
 --- !u!20 &535650774
 Camera:
   m_ObjectHideFlags: 0

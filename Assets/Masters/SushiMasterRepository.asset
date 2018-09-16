@@ -102,3 +102,18 @@ MonoBehaviour:
       type: 2}
     IsUnlocked: 0
     GachaWeight: 50
+  - Name: Uni
+    FlavorText: aaaaaaaa
+    Rarity: 0
+    Code: 6
+    Price:
+      Value: 1600
+    prefab: {fileID: 114513623132136884, guid: 915e9fbf4a1ee4f04ae7e1c5137579ca, type: 2}
+    netaPrefab: {fileID: 1975241849439570, guid: c6297ecd851ed478fb30fb71c803a95c,
+      type: 2}
+    dishPrefab: {fileID: 1057317834854458, guid: 496f6022afa15409bba2714ed865d770,
+      type: 2}
+    ricePrefab: {fileID: 1143991178693846, guid: 07b5a6d456ae146b0a2841a81d5c07de,
+      type: 2}
+    IsUnlocked: 0
+    GachaWeight: 25

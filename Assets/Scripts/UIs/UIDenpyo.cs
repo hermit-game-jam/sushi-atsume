@@ -8,7 +8,7 @@ namespace UIs
     {
         [SerializeField] string priceFormat;
         [SerializeField] TextMeshProUGUI text;
-        [SerializeField] Animation animation;
+        [SerializeField] Animation _animation;
 
         void Start()
         {
@@ -28,7 +28,7 @@ namespace UIs
 
             if (playAnimation)
             {
-                animation.Play();
+                _animation.Play();
             }
         }
     }

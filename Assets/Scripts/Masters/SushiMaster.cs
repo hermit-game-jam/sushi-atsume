@@ -8,5 +8,6 @@ namespace Masters
         public int Code;
         public Price Price;
         public SushiCore prefab;
+        public bool IsUnlocked;
     }
 }

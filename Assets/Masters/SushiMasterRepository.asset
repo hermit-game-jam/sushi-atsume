@@ -14,19 +14,37 @@ MonoBehaviour:
   Values:
   - Code: 0
     Price:
-      Value: 1
+      Value: 100
     prefab: {fileID: 114513623132136884, guid: 915e9fbf4a1ee4f04ae7e1c5137579ca, type: 2}
+    netaPrefab: {fileID: 1975241849439570, guid: c6297ecd851ed478fb30fb71c803a95c,
+      type: 2}
+    dishPrefab: {fileID: 1057317834854458, guid: a63aa4f6b42854ca2bc946c005887b98,
+      type: 2}
+    ricePrefab: {fileID: 1997753026518132, guid: 026b792281c5e9c44914a2f805edc89c,
+      type: 2}
     IsUnlocked: 1
-    GachaWeight: 1
+    GachaWeight: 0
   - Code: 1
     Price:
-      Value: 2
+      Value: 150
     prefab: {fileID: 114513623132136884, guid: 915e9fbf4a1ee4f04ae7e1c5137579ca, type: 2}
+    netaPrefab: {fileID: 1975241849439570, guid: c6297ecd851ed478fb30fb71c803a95c,
+      type: 2}
+    dishPrefab: {fileID: 1057317834854458, guid: a63aa4f6b42854ca2bc946c005887b98,
+      type: 2}
+    ricePrefab: {fileID: 1997753026518132, guid: 026b792281c5e9c44914a2f805edc89c,
+      type: 2}
     IsUnlocked: 0
     GachaWeight: 2
   - Code: 2
     Price:
-      Value: 3
+      Value: 200
     prefab: {fileID: 114513623132136884, guid: 915e9fbf4a1ee4f04ae7e1c5137579ca, type: 2}
+    netaPrefab: {fileID: 1975241849439570, guid: c6297ecd851ed478fb30fb71c803a95c,
+      type: 2}
+    dishPrefab: {fileID: 1057317834854458, guid: a63aa4f6b42854ca2bc946c005887b98,
+      type: 2}
+    ricePrefab: {fileID: 1997753026518132, guid: 026b792281c5e9c44914a2f805edc89c,
+      type: 2}
     IsUnlocked: 0
     GachaWeight: 3

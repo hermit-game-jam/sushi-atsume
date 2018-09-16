@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Values:
   - Name: Maguro
-    FlavorText: kkkkkkkkkk
+    FlavorText: Simple but Deep tastes
     Rarity: 4
     Code: 0
     Price:
@@ -28,7 +28,7 @@ MonoBehaviour:
     IsUnlocked: 1
     GachaWeight: 0
   - Name: Tamago
-    FlavorText: aaaaaaaaaaaa
+    FlavorText: Hmm... Nice broth
     Rarity: 3
     Code: 1
     Price:
@@ -43,7 +43,7 @@ MonoBehaviour:
     IsUnlocked: 0
     GachaWeight: 200
   - Name: Salmon
-    FlavorText: nnnnnnnnnnn
+    FlavorText: We love it!
     Rarity: 3
     Code: 2
     Price:
@@ -58,7 +58,7 @@ MonoBehaviour:
     IsUnlocked: 0
     GachaWeight: 200
   - Name: Ika
-    FlavorText: aaaaaaaaaa
+    FlavorText: Splatooooooon!
     Rarity: 2
     Code: 3
     Price:
@@ -73,7 +73,7 @@ MonoBehaviour:
     IsUnlocked: 0
     GachaWeight: 100
   - Name: Kohada
-    FlavorText: iiiiiiiiiiiiiii
+    FlavorText: Cool Silver
     Rarity: 2
     Code: 4
     Price:
@@ -88,7 +88,7 @@ MonoBehaviour:
     IsUnlocked: 0
     GachaWeight: 100
   - Name: Negitoro
-    FlavorText: ssssssss
+    FlavorText: Aieeeeeeeee!?
     Rarity: 1
     Code: 5
     Price:
@@ -103,7 +103,7 @@ MonoBehaviour:
     IsUnlocked: 0
     GachaWeight: 50
   - Name: Uni
-    FlavorText: aaaaaaaa
+    FlavorText: Is this maron?
     Rarity: 0
     Code: 6
     Price:
@@ -118,7 +118,7 @@ MonoBehaviour:
     IsUnlocked: 0
     GachaWeight: 25
   - Name: King Salmon
-    FlavorText: nnnnnn
+    FlavorText: This is King of the SUSHI
     Rarity: 1
     Code: 7
     Price:
@@ -133,7 +133,7 @@ MonoBehaviour:
     IsUnlocked: 0
     GachaWeight: 60
   - Name: Aburi Salmon
-    FlavorText: ooooo
+    FlavorText: Aburi!? Salmon is good, but this is god!
     Rarity: 2
     Code: 8
     Price:

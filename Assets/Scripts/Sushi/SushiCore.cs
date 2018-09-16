@@ -55,6 +55,7 @@ namespace Sushi
         {
             readonly SushiCore core;
             public bool AutoMovable => false;
+            int SushiLife = 5;
 
             public TableSushiState(SushiCore core)
             {
@@ -62,7 +63,27 @@ namespace Sushi
             }
             void ISushiState.OnClick()
             {
+                SushiLife--;
+                if (SushiLife <= 0)
+                {
+                    core.ChangeState(new EmptySushiState(core));
+                }
+            }
+        }
+        
+        class EmptySushiState : ISushiState
+        {
+            readonly SushiCore core;
+            public bool AutoMovable => false;
 
+            public EmptySushiState(SushiCore core)
+            {
+                this.core = core;
+            }
+            void ISushiState.OnClick()
+            {
+                Sushiya.Sushiya.Instance.DishHolder.Add(core.Master.Code);
+                Destroy(core.gameObject);
             }
         }
     }
